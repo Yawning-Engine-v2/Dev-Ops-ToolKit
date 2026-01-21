@@ -1,0 +1,36 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      
+      users:
+      - id: "admin"
+        name: "CASC Admin"
+        password: "${JENKINS_ADMIN_PASSWORD:=admin}"
+        properties:
+        - theme:
+            theme: "noOp"
+        - myView:
+            viewsTabBar: "standard"
+        - mailer:
+            emailAddress: "bhuvandb36@gmail.com"
+        - preferredProvider:
+            providerId: "default"
+        - timezone:
+            timeZoneName: "Asia/Kolkata"
+      
+      - id: "developer"
+        name: "DEV"
+        password: "developer123"
+        properties:
+        - theme:
+            theme: "noOp"
+        - myView:
+            viewsTabBar: "standard"
+        - mailer:
+            emailAddress: "dev@gmail.com"
+        - preferredProvider:
+            providerId: "default"
+        - timezone:
+            timeZoneName: "Asia/Kolkata"

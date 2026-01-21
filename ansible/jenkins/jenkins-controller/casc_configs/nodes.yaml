@@ -1,0 +1,28 @@
+jenkins:
+  slaveAgentPort: 50000
+  
+  nodeMonitors:
+    - "architecture"
+    - "clock"
+    - diskSpace:
+        freeSpaceThreshold: "20GiB"
+        freeSpaceWarningThreshold: "50GiB"
+    - "swapSpace"
+    - tmpSpace:
+        freeSpaceThreshold: "2GiB"
+        freeSpaceWarningThreshold: "4GiB"
+    - "responseTime"
+
+  nodes:
+    - permanent:
+        labelString: "windows ci staging"
+        launcher:
+          inbound:
+            workDirSettings:
+              disabled: false
+              failIfWorkDirIsMissing: false
+              internalDir: "remoting"
+        name: "agent-windows-staging"
+        numExecutors: 3
+        remoteFS: "c:\\jenkins"
+        retentionStrategy: "always"

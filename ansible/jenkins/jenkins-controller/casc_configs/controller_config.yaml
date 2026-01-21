@@ -1,0 +1,19 @@
+jenkins:
+  systemMessage: "Managed by Jenkins Configuration as Code <CASC>\r\n"
+
+  mode: NORMAL
+  numExecutors: 3
+  labelString: "Jenkins-Controller"
+  
+  primaryView:
+    all:
+      name: "all"
+  
+  projectNamingStrategy: "standard"
+  
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  
+  remotingSecurity:
+    enabled: true
